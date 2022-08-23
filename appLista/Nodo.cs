@@ -14,8 +14,8 @@ namespace appLista
 			get { return dato; }
 			set { dato = value; }
 		}
-		private Nodo siguiente;
 
+		private Nodo siguiente;
 		public Nodo Siguiente
 		{
 			get { return siguiente; }
@@ -36,7 +36,7 @@ namespace appLista
 
 		public override string ToString()
 		{
-			return ", " + dato;
+			return " - " + dato;
 		}
 	}
 }

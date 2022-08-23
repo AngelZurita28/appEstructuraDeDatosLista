@@ -3,7 +3,7 @@ namespace appLista
     public partial class Form1 : Form
     {
         Nodo? head = new Nodo();
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -20,10 +20,21 @@ namespace appLista
             }
             else
             {
-                n.Siguiente = head;
-                head = n;
+                string nuevoDato = n.Dato;
+                string datoExistente = head.Dato;
+                if (String.Compare(nuevoDato, datoExistente) == -1)
+                {
+                    n.Siguiente = head;
+                    head = n;
+                }
+                else
+                {
+                    n.Siguiente = head;
+                    head = n;
+                    head.Dato = datoExistente;
+                    head.Siguiente.Dato = nuevoDato;
+                }
             }
-            recorrer();
         }
 
         private void recorrer()
