@@ -49,5 +49,36 @@ namespace appLista
             }
             MessageBox.Show(listadatos);
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar(txtDato.Text);
+        }
+        private void Eliminar(string d)
+        {
+            if (head.Dato == d)
+            {
+                head = head.Siguiente;
+                recorrer();
+                return;
+            }
+
+            Nodo h = head;
+            while (h.Siguiente != null)
+            {
+                if (h.Siguiente.Dato == d)
+                {
+                    h.Siguiente = h.Siguiente.Siguiente;
+                    recorrer();
+                    break;
+                }
+                h = h.Siguiente;
+            }
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            recorrer();
+        }
     }
 }
