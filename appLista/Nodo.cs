@@ -10,8 +10,7 @@ namespace appLista
     {
 		private string dato;
 		public string Dato
-		{
-			get { return dato; }
+		{get { return dato; }
 			set { dato = value; }
 		}
 
